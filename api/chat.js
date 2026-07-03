@@ -3,6 +3,18 @@
 // The key stays on the server — it is never exposed to visitors' browsers.
 
 export default async function handler(req, res) {
+  if (req.method === "GET" && req.query?.debug === "1") {
+    const key = process.env.ANTHROPIC_API_KEY || "";
+    return res.status(200).json({
+      present: key.length > 0,
+      length: key.length,
+      prefix: key.slice(0, 7),
+      suffix: key.slice(-4),
+      hasWhitespace: /\s/.test(key),
+      hasQuotes: /['"]/.test(key),
+    });
+  }
+
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
