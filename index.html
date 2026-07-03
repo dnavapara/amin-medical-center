@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Amin Medical Center — Internal Medicine in Skippack & Lansdale, PA</title>
+<meta name="description" content="Amin Medical Center is a privately run internal medicine practice serving Montgomery County adults since 1981. Two locations in Skippack and Lansdale, PA. Medicare and most insurance accepted. Book a visit online." />
+<meta property="og:title" content="Amin Medical Center — Internal Medicine, Skippack & Lansdale PA" />
+<meta property="og:description" content="Adult primary care since 1981. Annual physicals, chronic care, telehealth. AI-assisted scheduling and intake." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --pine: #16443C; --pine-deep: #0B2A24; --pine-ink: #071E1A;
+    --mist: #F4F8F4; --white: #FFFFFF;
+    --amber: #F2A93B; --amber-dark: #D98F24;
+    --ink: #17221F; --slate: #5A6B66;
+    --sage: #C9DCCF; --sage-light: #E7F0E9;
+    --glass: rgba(255,255,255,0.07); --glass-border: rgba(255,255,255,0.14);
+    --display: 'Sora', sans-serif; --body: 'Instrument Sans', sans-serif;
+    --r: 24px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--mist); color: var(--ink); font-family: var(--body); -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1140px; margin: 0 auto; padding-left: clamp(16px, 4vw, 32px); padding-right: clamp(16px, 4vw, 32px); }
+  button { font-family: inherit; cursor: pointer; }
+  button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, a:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+
+  /* Reveal on scroll */
+  .rv { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+  .rv.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .rv { opacity: 1; transform: none; transition: none; }
+    * { animation: none !important; transition-duration: 0.01ms !important; }
+  }
+
+  /* ---------- Floating nav ---------- */
+  .navbar { position: fixed; top: 14px; left: 0; right: 0; z-index: 40; pointer-events: none; }
+  .nav-pill { pointer-events: auto; max-width: 1080px; margin: 0 auto; width: calc(100% - 28px);
+    display: flex; align-items: center; gap: 18px; padding: 10px 12px 10px 22px;
+    background: rgba(11,42,36,0.72); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; box-shadow: 0 12px 40px rgba(7,30,26,0.35); }
+  .logo { font-family: var(--display); font-weight: 700; font-size: 17px; color: #fff; text-decoration: none; letter-spacing: -0.01em; white-space: nowrap; }
+  .logo em { font-style: normal; color: var(--amber); }
+  .nav-links { margin-left: auto; display: flex; gap: 4px; align-items: center; }
+  .nav-links a { color: rgba(255,255,255,0.85); font-size: 14px; font-weight: 500; text-decoration: none; padding: 8px 13px; border-radius: 999px; transition: background .2s, color .2s; }
+  .nav-links a:hover { background: rgba(255,255,255,0.1); color: #fff; }
+  .nav-cta { background: var(--amber); color: var(--pine-ink) !important; font-family: var(--display); font-weight: 700; font-size: 13.5px; padding: 10px 18px !important; transition: transform .2s, box-shadow .2s; }
+  .nav-cta:hover { background: var(--amber) !important; transform: translateY(-1px); box-shadow: 0 8px 20px rgba(242,169,59,0.4); }
+  .menu-btn { display: none; margin-left: auto; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 999px; padding: 8px 14px; color: #fff; font-size: 14px; }
+  @media (max-width: 840px) {
+    .nav-links { display: none; position: absolute; top: calc(100% + 10px); left: 14px; right: 14px;
+      background: rgba(11,42,36,0.95); backdrop-filter: blur(18px); flex-direction: column; align-items: stretch;
+      padding: 14px; gap: 6px; border-radius: 22px; border: 1px solid rgba(255,255,255,0.12); }
+    .nav-links.open { display: flex; }
+    .nav-links a { text-align: center; }
+    .menu-btn { display: block; }
+    .navbar { position: absolute; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero { position: relative; overflow: hidden; background:
+      radial-gradient(900px 500px at 12% -10%, rgba(242,169,59,0.16), transparent 60%),
+      radial-gradient(800px 600px at 95% 15%, rgba(94,180,150,0.18), transparent 55%),
+      linear-gradient(160deg, var(--pine-ink) 0%, var(--pine-deep) 45%, var(--pine) 100%);
+    color: #fff; padding: clamp(120px, 16vw, 168px) 0 clamp(120px, 12vw, 150px); }
+  .hero::after { content: ""; position: absolute; inset: auto 0 -1px 0; height: 90px;
+    background: var(--mist); clip-path: ellipse(75% 100% at 50% 100%); }
+  .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(32px, 5vw, 60px); align-items: center; }
+  .badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 999px; padding: 7px 15px; font-size: 12.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.85); margin-bottom: 22px; }
+  .badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--amber); box-shadow: 0 0 12px var(--amber); }
+  h1 { font-family: var(--display); font-size: clamp(38px, 5.6vw, 60px); font-weight: 800; line-height: 1.04; letter-spacing: -0.025em; margin: 0 0 20px; }
+  h1 .grad { background: linear-gradient(92deg, var(--amber) 0%, #FFD98A 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .lede { font-size: 17px; line-height: 1.7; color: rgba(255,255,255,0.72); margin: 0 0 30px; max-width: 470px; }
+  .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { border: none; border-radius: 999px; font-family: var(--display); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: transform .2s, box-shadow .2s, background .2s; }
+  .btn-amber { background: var(--amber); color: var(--pine-ink); padding: 15px 28px; font-size: 15.5px; }
+  .btn-amber:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(242,169,59,0.35); }
+  .btn-glass { background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 15px 28px; font-size: 15.5px; font-weight: 600; }
+  .btn-glass:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px); }
+  .hero-meta { font-size: 13.5px; color: rgba(255,255,255,0.55); margin-top: 26px; }
+  .hero-meta a { color: rgba(255,255,255,0.9); font-weight: 600; text-decoration: none; }
+
+  /* Glass assistant */
+  .assistant { background: rgba(255,255,255,0.06); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border); border-radius: 28px; overflow: hidden; display: flex; flex-direction: column;
+    height: 500px; box-shadow: 0 30px 80px rgba(0,0,0,0.35); }
+  .assistant-head { padding: 16px 22px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--glass-border); }
+  .pulse { width: 10px; height: 10px; border-radius: 50%; background: var(--amber); animation: pulse 2.4s ease-in-out infinite; }
+  @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(242,169,59,0.5);} 50% { box-shadow: 0 0 0 8px rgba(242,169,59,0);} }
+  .assistant-head b { font-family: var(--display); font-weight: 600; font-size: 15px; color: #fff; }
+  .assistant-head small { margin-left: auto; font-size: 11.5px; color: rgba(255,255,255,0.5); }
+  .chat-log { flex: 1; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+  .chat-log::-webkit-scrollbar { width: 6px; } .chat-log::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 3px; }
+  .msg { max-width: 86%; padding: 11px 15px; font-size: 14.5px; line-height: 1.55; white-space: pre-wrap; }
+  .msg.user { align-self: flex-end; color: var(--pine-ink); background: var(--amber); border-radius: 18px 18px 4px 18px; }
+  .msg.bot { align-self: flex-start; color: #fff; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); border-radius: 18px 18px 18px 4px; }
+  .msg.busy { color: rgba(255,255,255,0.6); }
+  .chat-foot { padding: 12px 14px 14px; border-top: 1px solid var(--glass-border); }
+  .chips { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 10px; scrollbar-width: none; } .chips::-webkit-scrollbar { display: none; }
+  .chip { flex-shrink: 0; border: 1px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.85);
+    border-radius: 999px; padding: 7px 13px; font-size: 12.5px; transition: background .2s; }
+  .chip:hover { background: rgba(255,255,255,0.14); }
+  .chat-row { display: flex; gap: 8px; }
+  .chat-row input { flex: 1; border: 1px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.06); border-radius: 14px;
+    padding: 12px 15px; font-size: 14.5px; font-family: var(--body); color: #fff; }
+  .chat-row input::placeholder { color: rgba(255,255,255,0.4); }
+  .send { background: var(--amber); border: none; border-radius: 14px; padding: 0 20px; font-weight: 700; color: var(--pine-ink); font-size: 14.5px; font-family: var(--display); transition: transform .15s; }
+  .send:hover { transform: scale(1.04); }
+
+  /* ---------- Stats strip ---------- */
+  .stats { position: relative; z-index: 2; margin-top: -58px; }
+  .stats-card { background: var(--white); border-radius: var(--r); box-shadow: 0 24px 60px rgba(11,42,36,0.12);
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+  .stat { padding: 26px 24px; text-align: center; border-right: 1px solid var(--sage-light); }
+  .stat:last-child { border-right: none; }
+  @media (max-width: 700px) { .stat { border-right: none; border-bottom: 1px solid var(--sage-light); } .stat:last-child { border-bottom: none; } }
+  .stat b { font-family: var(--display); font-size: clamp(24px, 3vw, 32px); font-weight: 800; color: var(--pine); display: block; letter-spacing: -0.02em; }
+  .stat span { font-size: 13px; color: var(--slate); font-weight: 500; }
+
+  /* ---------- Sections ---------- */
+  section { padding: clamp(64px, 8vw, 96px) 0; }
+  .kicker { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .kicker::before { content: ""; width: 34px; height: 2px; background: var(--amber); border-radius: 2px; }
+  .kicker span { font-family: var(--display); font-size: 12.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber-dark); }
+  h2 { font-family: var(--display); font-size: clamp(28px, 4vw, 40px); font-weight: 800; letter-spacing: -0.02em; color: var(--pine-deep); margin: 0 0 14px; line-height: 1.1; }
+  .sub { color: var(--slate); font-size: 16px; line-height: 1.65; max-width: 560px; margin: 0 0 40px; }
+
+  /* Bento services */
+  .bento { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+  .bcard { background: var(--white); border: 1px solid var(--sage-light); border-radius: var(--r); padding: 26px;
+    transition: transform .25s, box-shadow .25s, border-color .25s; }
+  .bcard:hover { transform: translateY(-4px); box-shadow: 0 20px 44px rgba(11,42,36,0.1); border-color: var(--sage); }
+  .bcard.feature { grid-column: span 2; background: linear-gradient(135deg, var(--pine-deep), var(--pine)); color: #fff; border: none; }
+  @media (max-width: 620px) { .bcard.feature { grid-column: span 1; } }
+  .icon { width: 42px; height: 42px; border-radius: 13px; background: var(--sage-light); color: var(--pine); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+  .bcard.feature .icon { background: rgba(255,255,255,0.12); color: var(--amber); }
+  .icon svg { width: 21px; height: 21px; }
+  .bcard b { font-family: var(--display); font-weight: 700; font-size: 16.5px; display: block; margin-bottom: 7px; letter-spacing: -0.01em; }
+  .bcard p { font-size: 14px; line-height: 1.6; color: var(--slate); margin: 0; }
+  .bcard.feature p { color: rgba(255,255,255,0.72); }
+
+  /* Panels (scheduler / intake) */
+  .panel { background: var(--white); border: 1px solid var(--sage-light); border-radius: 28px; padding: clamp(26px, 4vw, 44px); box-shadow: 0 16px 44px rgba(11,42,36,0.07); }
+  .hint { color: var(--slate); font-size: 15px; margin: 0 0 16px; }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .row input[type=text] { flex: 1 1 280px; border: 1.5px solid var(--sage); border-radius: 14px; padding: 14px 18px; font-size: 15px; font-family: var(--body); color: var(--ink); transition: border-color .2s; }
+  .row input[type=text]:focus { border-color: var(--pine); }
+  .btn-solid { background: var(--pine); color: #fff; border: none; border-radius: 14px; padding: 14px 26px; font-size: 15px; font-weight: 700; font-family: var(--display); transition: transform .2s, box-shadow .2s; }
+  .btn-solid:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(22,68,60,0.3); }
+  .pills { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-top: 24px; }
+  .pill { background: var(--sage-light); color: var(--pine); border-radius: 999px; padding: 7px 15px; font-size: 13.5px; font-weight: 600; }
+  .pill.hot { background: var(--amber); color: var(--pine-ink); }
+  .note { color: var(--slate); font-size: 14.5px; margin: 14px 0 18px; }
+  .slots { display: flex; gap: 10px; flex-wrap: wrap; }
+  .slot { border: 1.5px solid var(--sage); background: var(--white); color: var(--ink); border-radius: 14px; padding: 13px 19px; font-size: 14.5px; font-family: var(--body); transition: all .2s; }
+  .slot:hover { border-color: var(--pine); transform: translateY(-2px); }
+  .slot.picked { border-color: var(--pine); background: var(--pine); color: #fff; }
+  .ok { color: var(--pine); font-weight: 600; font-size: 15px; margin-top: 16px; }
+  .err { color: #A33B2E; font-size: 14px; margin-top: 14px; }
+  .alert { margin-top: 18px; background: #FBEAE6; border: 1.5px solid #E5988B; border-radius: 16px; padding: 15px 19px; color: #7C271B; font-size: 15px; }
+
+  .book-form { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--sage-light); display: none; }
+  .book-form.show { display: block; animation: fadeUp .4s ease; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px);} to { opacity: 1; transform: none;} }
+  .book-form .fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 16px; }
+  .book-form input, .book-form select { border: 1.5px solid var(--sage); border-radius: 14px; padding: 13px 15px; font-size: 14.5px; font-family: var(--body); color: var(--ink); width: 100%; background: var(--white); }
+
+  .btn-go { margin-top: 16px; background: var(--amber); color: var(--pine-ink); border: none; border-radius: 14px; padding: 14px 26px; font-size: 15px; font-weight: 700; font-family: var(--display); transition: transform .2s, box-shadow .2s; }
+  .btn-go:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(242,169,59,0.35); }
+
+  /* Intake */
+  .band { background: linear-gradient(180deg, var(--sage-light), var(--mist)); }
+  .intake-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+  textarea { width: 100%; border: 1.5px solid var(--sage); border-radius: 16px; padding: 17px; font-size: 15px; line-height: 1.6; resize: vertical; font-family: var(--body); color: var(--ink); transition: border-color .2s; }
+  textarea:focus { border-color: var(--pine); }
+  .summary-panel { background: linear-gradient(150deg, var(--pine-ink), var(--pine-deep)); color: #fff; border-radius: 28px; padding: clamp(26px, 4vw, 40px); }
+  .summary-panel .kicker::before { background: var(--amber); }
+  .summary-panel .kicker span { color: var(--amber); }
+  .summary-empty { font-size: 14.5px; color: rgba(255,255,255,0.6); line-height: 1.65; }
+  .summary-card { background: var(--white); border-radius: 20px; padding: 10px 22px; color: var(--ink); animation: fadeUp .4s ease; }
+  .srow { display: flex; gap: 14px; padding: 13px 0; border-bottom: 1px solid var(--sage-light); }
+  .srow:last-of-type { border-bottom: none; }
+  .srow .lbl { font-family: var(--display); font-size: 12px; font-weight: 700; color: var(--slate); text-transform: uppercase; letter-spacing: 0.07em; width: 128px; flex-shrink: 0; padding-top: 2px; }
+  .srow .val { font-size: 14.5px; line-height: 1.55; }
+  .flag { background: #FBEAE6; color: #7C271B; border-radius: 999px; padding: 6px 13px; font-size: 13px; font-weight: 600; display: inline-block; margin: 13px 0; }
+
+  /* Team */
+  .grid-team { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+  .provider { background: var(--white); border: 1px solid var(--sage-light); border-radius: var(--r); padding: 26px; transition: transform .25s, box-shadow .25s; }
+  .provider:hover { transform: translateY(-4px); box-shadow: 0 20px 44px rgba(11,42,36,0.1); }
+  .avatar { width: 58px; height: 58px; border-radius: 18px; background: linear-gradient(140deg, var(--pine), var(--pine-deep)); color: var(--amber);
+    display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 800; font-size: 17px; margin-bottom: 16px; }
+  .provider b { font-family: var(--display); font-weight: 700; font-size: 16px; color: var(--pine-deep); display: block; letter-spacing: -0.01em; }
+  .provider span { font-size: 13.5px; color: var(--slate); margin-top: 5px; display: block; line-height: 1.5; }
+
+  /* Locations */
+  .grid-loc { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 18px; }
+  .loc { background: var(--white); border: 1px solid var(--sage-light); border-radius: var(--r); padding: 30px; transition: transform .25s, box-shadow .25s; }
+  .loc:hover { transform: translateY(-4px); box-shadow: 0 20px 44px rgba(11,42,36,0.1); }
+  .loc b { font-family: var(--display); font-size: 18px; font-weight: 700; color: var(--pine-deep); display: block; margin-bottom: 10px; }
+  .loc p { font-size: 14.5px; color: var(--slate); line-height: 1.75; margin: 0 0 16px; }
+  .loc a.tel { color: var(--pine); font-weight: 600; text-decoration: none; }
+  .loc a.map { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--amber-dark); font-weight: 700; text-decoration: none; font-family: var(--display); }
+
+  /* CTA band */
+  .cta-band { background: linear-gradient(140deg, var(--pine-ink), var(--pine)); border-radius: 32px; padding: clamp(40px, 6vw, 64px); text-align: center; color: #fff; position: relative; overflow: hidden; }
+  .cta-band::before { content: ""; position: absolute; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(242,169,59,0.18), transparent 65%); top: -250px; right: -120px; }
+  .cta-band h2 { color: #fff; }
+  .cta-band p { color: rgba(255,255,255,0.7); max-width: 480px; margin: 0 auto 28px; font-size: 16px; line-height: 1.65; }
+
+  /* Footer */
+  footer { background: var(--pine-ink); color: #fff; margin-top: -40px; padding-top: 40px; }
+  .foot-inner { padding: 52px 0 44px; display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; align-items: flex-start; }
+  footer .logo2 { font-family: var(--display); font-weight: 700; font-size: 18px; }
+  footer .logo2 em { font-style: normal; color: var(--amber); }
+  footer p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.8; margin: 12px 0 0; }
+  footer .fine { font-size: 12.5px; color: rgba(255,255,255,0.45); max-width: 380px; margin: 0; line-height: 1.7; }
+</style>
+</head>
+<body id="top">
+
+<div class="navbar">
+  <div class="nav-pill">
+    <a class="logo" href="#top">Amin <em>Medical Center</em></a>
+    <button class="menu-btn" aria-label="Toggle menu" onclick="document.getElementById('navlinks').classList.toggle('open')">Menu</button>
+    <div class="nav-links" id="navlinks">
+      <a href="#services">Services</a>
+      <a href="#book">Visits</a>
+      <a href="#intake">Intake</a>
+      <a href="#team">Care team</a>
+      <a href="#locations">Locations</a>
+      <a class="nav-cta" href="#book">Book a visit</a>
+    </div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="badge"><span class="dot"></span> Internal medicine · Skippack &amp; Lansdale, PA</div>
+      <h1>Four decades of care.<br/><span class="grad">Answers before you arrive.</span></h1>
+      <p class="lede">A privately run internal medicine practice caring for Montgomery County adults since 1981 — now paired with an AI care assistant that handles the waiting-room part: questions, scheduling, and paperwork.</p>
+      <div class="cta-row">
+        <a class="btn btn-amber" href="#book">Book a visit →</a>
+        <a class="btn btn-glass" href="#intake">Start intake at home</a>
+      </div>
+      <p class="hero-meta">Skippack <a href="tel:+16105841663">(610) 584-1663</a> · Lansdale <a href="tel:+12676476400">(267) 647-6400</a> · Medicare &amp; most insurance accepted</p>
+    </div>
+
+    <div class="assistant">
+      <div class="assistant-head">
+        <span class="pulse"></span><b>Amin Care Assistant</b><small>AI · not medical advice</small>
+      </div>
+      <div class="chat-log" id="chatlog"></div>
+      <div class="chat-foot">
+        <div class="chips" id="chips"></div>
+        <div class="chat-row">
+          <input id="chatinput" placeholder="Ask about visits, insurance, symptoms…" aria-label="Message the care assistant" />
+          <button class="send" id="chatsend">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="stats wrap rv">
+  <div class="stats-card">
+    <div class="stat"><b>45<span style="color:var(--amber)">y</span></b><span>Serving this community</span></div>
+    <div class="stat"><b>2</b><span>Offices, one care team</span></div>
+    <div class="stat"><b>7+</b><span>Physicians, NPs &amp; PA</span></div>
+    <div class="stat"><b>Sat</b><span>Weekend &amp; evening hours</span></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kicker"><span>What we do</span></div>
+      <h2>Adult primary care, start to finish</h2>
+      <p class="sub">From your annual physical to the ongoing management of chronic conditions — the same clinicians, year after year.</p>
+    </div>
+    <div class="bento" id="services-grid"></div>
+  </div>
+</section>
+
+<section id="book" style="padding-top:0">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kicker"><span>Smart scheduling</span></div>
+      <h2>Book the right visit, not just a visit</h2>
+      <p class="sub">Tell us why you're coming in — our AI matches the visit type and length, you pick a time, and our staff confirms.</p>
+    </div>
+    <div class="panel rv">
+      <div class="row">
+        <input type="text" id="reason" placeholder='e.g. "Blood pressure follow-up" or "Sore throat for 3 days"' aria-label="Reason for visit" />
+        <button class="btn-solid" id="analyze">Find my visit</button>
+      </div>
+      <div id="sched-out"></div>
+
+      <div class="book-form" id="bookform">
+        <p class="hint">Almost done — tell us who the visit is for and we'll confirm by phone or text.</p>
+        <div class="fields">
+          <input type="text" id="bf-name" placeholder="Full name" aria-label="Full name" />
+          <input type="text" id="bf-dob" placeholder="Date of birth (MM/DD/YYYY)" aria-label="Date of birth" />
+          <input type="text" id="bf-phone" placeholder="Phone number" aria-label="Phone number" />
+          <select id="bf-loc" aria-label="Preferred office">
+            <option value="Skippack">Skippack office</option>
+            <option value="Lansdale">Lansdale office</option>
+          </select>
+          <select id="bf-patient" aria-label="Patient status">
+            <option value="Existing patient">Existing patient</option>
+            <option value="New patient">New patient</option>
+          </select>
+        </div>
+        <button class="btn-go" id="bf-submit">Request this appointment</button>
+        <p id="bf-status"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="intake">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kicker"><span>Automated intake</span></div>
+      <h2>Do the paperwork in your own words</h2>
+      <p class="sub">Skip the clipboard. Describe what's going on — we'll organize it for your doctor before you arrive.</p>
+    </div>
+    <div class="intake-grid">
+      <div class="panel rv">
+        <textarea id="intake-note" rows="8" placeholder="e.g. I've had a dry cough and low fever since Tuesday. Taking Tylenol. Allergic to penicillin. Want to ask about my blood pressure meds too."></textarea>
+        <button class="btn-go" id="intake-go">Prepare my intake</button>
+        <p class="err" id="intake-err" hidden></p>
+      </div>
+      <div class="summary-panel rv">
+        <div class="kicker"><span>Pre-visit summary</span></div>
+        <p class="summary-empty" id="summary-empty">Your organized summary will appear here — chief complaint, symptoms, medications, allergies, and the questions you want answered.</p>
+        <div class="summary-card" id="summary-card" hidden></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kicker"><span>Care team</span></div>
+      <h2>A care team this community has trusted since 1981</h2>
+      <p class="sub">Board-certified internal medicine physicians, nurse practitioners, and a physician assistant — working seamlessly across both offices.</p>
+    </div>
+    <div class="grid-team" id="team-grid"></div>
+  </div>
+</section>
+
+<section id="locations" style="padding-top:0">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kicker"><span>Visit us</span></div>
+      <h2>Two offices, one care team</h2>
+    </div>
+    <div class="grid-loc">
+      <div class="loc rv">
+        <b>Skippack</b>
+        <p>3887 Skippack Pike<br/>Skippack, PA 19474<br/>
+        Mon/Wed/Thu/Fri 8–5 · Tue 8–7 · Sat 8–12<br/>
+        <a class="tel" href="tel:+16105841663">(610) 584-1663</a></p>
+        <a class="map" href="https://maps.google.com/?q=3887+Skippack+Pike,+Skippack,+PA+19474" target="_blank" rel="noopener">Get directions →</a>
+      </div>
+      <div class="loc rv">
+        <b>Lansdale</b>
+        <p>21 S Valley Forge Rd, Ste 100<br/>Lansdale, PA 19446<br/>
+        Mon 8–5 · Tue 8–7 · Wed 8–3:30 · Thu 8–7 · Fri 8–5 · Sat 8–12<br/>
+        <a class="tel" href="tel:+12676476400">(267) 647-6400</a></p>
+        <a class="map" href="https://maps.google.com/?q=21+S+Valley+Forge+Rd,+Lansdale,+PA+19446" target="_blank" rel="noopener">Get directions →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0; padding-bottom: 96px;">
+  <div class="wrap">
+    <div class="cta-band rv">
+      <h2>New patients welcome</h2>
+      <p>Join a practice where the doctors actually know you. Medicare, Medicaid, and most major plans accepted.</p>
+      <a class="btn btn-amber" href="#book">Book your first visit →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>
+      <div class="logo2">Amin <em>Medical Center</em></div>
+      <p>Skippack: 3887 Skippack Pike, Skippack, PA 19474 · (610) 584-1663<br/>
+      Lansdale: 21 S Valley Forge Rd, Ste 100, Lansdale, PA 19446 · (267) 647-6400<br/>
+      Weekdays from 8 AM · Sat 8–12 · Evening hours Tue (and Thu in Lansdale)</p>
+    </div>
+    <p class="fine">The Amin care assistant provides general information only and is not a substitute for professional medical advice. Appointment requests are confirmed by our staff. In an emergency, call 911.</p>
+  </div>
+</footer>
+
+<script>
+/* ================= Data ================= */
+const ic = {
+  heart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',
+  shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+  clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+  check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
+  moon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>',
+  video: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>',
+};
+const SERVICES = [
+  ["Chronic care management", "Diabetes, hypertension, cholesterol, heart disease — managed with continuity by clinicians who know your history, across both offices.", ic.heart, true],
+  ["Annual physicals & wellness", "Including Medicare Annual Wellness Visits", ic.check, false],
+  ["Sick visits", "Same-day appointments when available — just call", ic.clock, false],
+  ["Preventive screenings & vaccinations", "Stay ahead of problems, not behind them", ic.shield, false],
+  ["Allergy & sleep concerns", "Consultations and ongoing management", ic.moon, false],
+  ["Telehealth", "Video visits from home, most insurance accepted", ic.video, false],
+];
+const TEAM = [
+  ["Dr. Bipin Amin, MD", "Internal Medicine · Founder, est. 1981", "BA"],
+  ["Dr. Mehul B. Amin, MD", "Internal Medicine · Board-certified · Philadelphia Magazine Top Docs", "MA"],
+  ["Dr. Timothy Fiorillo, DO", "Internal Medicine", "TF"],
+  ["Dr. Rupal Patel, MD", "Internal Medicine", "RP"],
+  ["Priya Patel, PA-C", "Physician Assistant", "PP"],
+  ["Nurse Practitioner Team", "Advanced practice care · Lansdale office", "NP"],
+];
+const CHIPS = [
+  "Do you take Medicare?",
+  "Which office is closer — Skippack or Lansdale?",
+  "What happens at an annual physical?",
+  "Do you offer telehealth?",
+];
+
+document.getElementById("services-grid").innerHTML = SERVICES.map(
+  ([n, d, icon, feature]) => `<div class="bcard rv${feature ? " feature" : ""}"><div class="icon">${icon}</div><b>${n}</b><p>${d}</p></div>`
+).join("");
+document.getElementById("team-grid").innerHTML = TEAM.map(
+  ([n, r, i]) => `<div class="provider rv"><div class="avatar">${i}</div><b>${n}</b><span>${r}</span></div>`
+).join("");
+
+/* Scroll reveal */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll(".rv").forEach(el => io.observe(el));
+
+/* ================= AI plumbing ================= */
+const OFFLINE_MSG = "The assistant is offline right now — please call Skippack (610) 584-1663 or Lansdale (267) 647-6400 and our staff will be glad to help.";
+
+async function askClaude(messages, system) {
+  const res = await fetch("/api/chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ messages, system }),
+  });
+  if (!res.ok) throw new Error("api");
+  const data = await res.json();
+  return data.text || "";
+}
+function parseJSON(t) { try { return JSON.parse(t.replace(/```json|```/g, "").trim()); } catch { return null; } }
+const esc = (s) => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+/* ================= Care assistant ================= */
+const ASSISTANT_SYSTEM = `You are the care assistant for Amin Medical Center, a privately run internal medicine / primary care practice established in 1981, serving adults across Montgomery County, PA.
+Locations & hours:
+- Skippack office: 3887 Skippack Pike, Skippack, PA 19474 · (610) 584-1663 · Mon/Wed/Thu/Fri 8am-5pm, Tue 8am-7pm, Sat 8am-12pm, Sun closed.
+- Lansdale office: 21 S Valley Forge Rd, Ste 100, Lansdale, PA 19446 · (267) 647-6400 · Mon 8-5, Tue 8-7, Wed 8-3:30, Thu 8-7, Fri 8-5, Sat 8-12, Sun closed.
+Care team: Dr. Bipin Amin, MD (founder); Dr. Mehul B. Amin, MD (practice owner, board-certified internal medicine, Philadelphia Magazine Top Docs); Dr. Timothy Fiorillo, DO; Dr. Rupal Patel, MD; plus nurse practitioners and Priya Patel, PA-C. Hospital affiliations include Jefferson Einstein Montgomery and Jefferson Lansdale.
+Insurance: Medicare and Medicaid accepted, plus most major plans (Aetna, Cigna, Blue Cross/Highmark, United Healthcare, AmeriHealth, and others) — patients should confirm specifics by phone.
+Services: adult primary care, annual physicals and Medicare wellness visits, chronic disease management (diabetes, hypertension, high cholesterol, heart disease), preventive screenings, vaccinations, sick visits, allergy and sleep concerns, telehealth video visits.
+Note: this is an adult (internal medicine) practice — for pediatric care, suggest calling the office for local recommendations.
+Your job: answer practice FAQs warmly and concisely (2-4 sentences), and help people figure out what kind of visit they need. You may describe general self-care information but you never diagnose or prescribe.
+If a message suggests a possible emergency (chest pain, trouble breathing, stroke signs, severe bleeding, suicidal thoughts), tell them to call 911 or go to the nearest ER immediately — before anything else.
+If someone wants an appointment, point them to the "Book a visit" section on this page.`;
+
+const chatlog = document.getElementById("chatlog");
+const chatinput = document.getElementById("chatinput");
+let chatHistory = [];
+let chatBusy = false;
+
+function addMsg(role, text, busy = false) {
+  const div = document.createElement("div");
+  div.className = "msg " + (role === "user" ? "user" : "bot") + (busy ? " busy" : "");
+  div.textContent = text;
+  chatlog.appendChild(div);
+  chatlog.scrollTop = chatlog.scrollHeight;
+  return div;
+}
+addMsg("bot", "Hi, I'm the Amin care assistant. I can answer questions about the practice, insurance, and what kind of visit you might need. How can I help?");
+
+document.getElementById("chips").innerHTML = CHIPS.map(c => `<button class="chip">${c}</button>`).join("");
+document.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => sendChat(b.textContent)));
+
+async function sendChat(text) {
+  const q = (text ?? chatinput.value).trim();
+  if (!q || chatBusy) return;
+  chatinput.value = "";
+  addMsg("user", q);
+  chatHistory.push({ role: "user", content: q });
+  chatBusy = true;
+  const busyEl = addMsg("bot", "Thinking…", true);
+  try {
+    const reply = await askClaude(chatHistory.slice(-10), ASSISTANT_SYSTEM);
+    busyEl.remove();
+    addMsg("bot", reply || OFFLINE_MSG);
+    chatHistory.push({ role: "assistant", content: reply });
+  } catch {
+    busyEl.remove();
+    addMsg("bot", OFFLINE_MSG);
+  } finally {
+    chatBusy = false;
+  }
+}
+document.getElementById("chatsend").addEventListener("click", () => sendChat());
+chatinput.addEventListener("keydown", e => { if (e.key === "Enter") sendChat(); });
+
+/* ================= Smart scheduling + booking request ================= */
+const SCHED_SYSTEM = `You help schedule visits for an adult internal medicine practice. Given a patient's reason for visit, respond ONLY with JSON, no markdown, no preamble:
+{"visitType": string (e.g. "Same-day sick visit", "Annual physical", "Chronic care follow-up", "Medicare Annual Wellness Visit", "Telehealth consult", "New patient visit"), "duration": number (minutes, 15/30/45/60), "urgency": "same-day"|"this week"|"routine", "note": one warm sentence explaining the recommendation, "emergency": boolean (true only if the description suggests calling 911)}`;
+
+function buildSlots(urgency) {
+  const out = [];
+  const now = new Date();
+  const fmt = (d, h, m) => {
+    const t = new Date(d); t.setHours(h, m, 0, 0);
+    return t.toLocaleString([], { weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
+  };
+  const addDays = (n) => { const d = new Date(now); d.setDate(d.getDate() + n); return d; };
+  const skipSun = (d) => { while (d.getDay() === 0) d.setDate(d.getDate() + 1); return d; };
+  if (urgency === "same-day") {
+    out.push("Today " + fmt(now, Math.min(now.getHours() + 2, 16), 20).split(", ").pop());
+    out.push("Today " + fmt(now, Math.min(now.getHours() + 3, 16), 45).split(", ").pop());
+    out.push(fmt(skipSun(addDays(1)), 9, 0));
+  } else if (urgency === "this week") {
+    out.push(fmt(skipSun(addDays(1)), 9, 0), fmt(skipSun(addDays(2)), 13, 30), fmt(skipSun(addDays(3)), 10, 45));
+  } else {
+    out.push(fmt(skipSun(addDays(7)), 9, 30), fmt(skipSun(addDays(9)), 14, 0), fmt(skipSun(addDays(12)), 8, 15));
+  }
+  return out;
+}
+
+const schedOut = document.getElementById("sched-out");
+const bookform = document.getElementById("bookform");
+let currentRec = null, currentSlot = null;
+
+document.getElementById("analyze").addEventListener("click", analyze);
+document.getElementById("reason").addEventListener("keydown", e => { if (e.key === "Enter") analyze(); });
+
+async function analyze() {
+  const reason = document.getElementById("reason").value.trim();
+  if (!reason) return;
+  const btn = document.getElementById("analyze");
+  btn.textContent = "Matching…"; btn.disabled = true;
+  schedOut.innerHTML = ""; bookform.classList.remove("show"); currentRec = null; currentSlot = null;
+  try {
+    const text = await askClaude([{ role: "user", content: "Reason for visit: " + reason }], SCHED_SYSTEM);
+    const rec = parseJSON(text);
+    if (!rec) { schedOut.innerHTML = '<p class="err">Couldn\'t read a recommendation — please try rephrasing.</p>'; return; }
+    if (rec.emergency) {
+      schedOut.innerHTML = '<div class="alert">This may be an emergency. Please call 911 or go to the nearest emergency room now.</div>';
+      return;
+    }
+    currentRec = rec;
+    const slots = buildSlots(rec.urgency);
+    schedOut.innerHTML = `
+      <div class="pills">
+        <span class="pill">${esc(rec.visitType)}</span>
+        <span class="pill">${esc(rec.duration)} min</span>
+        <span class="pill hot">${esc(rec.urgency)}</span>
+      </div>
+      <p class="note">${esc(rec.note)}</p>
+      <div class="slots">${slots.map(s => `<button class="slot">${esc(s)}</button>`).join("")}</div>`;
+    schedOut.querySelectorAll(".slot").forEach(b => b.addEventListener("click", () => {
+      schedOut.querySelectorAll(".slot").forEach(x => x.classList.remove("picked"));
+      b.classList.add("picked");
+      currentSlot = b.textContent;
+      bookform.classList.add("show");
+      bookform.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }));
+  } catch {
+    schedOut.innerHTML = '<p class="err">The scheduler is unavailable right now. Please call (610) 584-1663.</p>';
+  } finally {
+    btn.textContent = "Find my visit"; btn.disabled = false;
+  }
+}
+
+document.getElementById("bf-submit").addEventListener("click", () => {
+  const name = document.getElementById("bf-name").value.trim();
+  const phone = document.getElementById("bf-phone").value.trim();
+  const status = document.getElementById("bf-status");
+  if (!name || !phone) {
+    status.className = "err"; status.textContent = "Please add your name and phone number so we can confirm.";
+    return;
+  }
+  const dob = document.getElementById("bf-dob").value.trim();
+  const loc = document.getElementById("bf-loc").value;
+  const ptype = document.getElementById("bf-patient").value;
+  // Sends the request to the office inbox — swap this address for the practice's scheduling email.
+  const subject = encodeURIComponent(`Appointment request — ${name}`);
+  const body = encodeURIComponent(
+    `Appointment request from the website\n\nName: ${name}\nDOB: ${dob || "not provided"}\nPhone: ${phone}\nPatient status: ${ptype}\nPreferred office: ${loc}\nVisit type: ${currentRec ? currentRec.visitType : ""} (${currentRec ? currentRec.duration : ""} min)\nRequested time: ${currentSlot || ""}\nReason: ${document.getElementById("reason").value.trim()}`
+  );
+  window.location.href = `mailto:appointments@aminmedicalcenter.com?subject=${subject}&body=${body}`;
+  status.className = "ok";
+  status.textContent = `✓ Request prepared for ${currentSlot}. Our staff will confirm your appointment — or call ${loc === "Skippack" ? "(610) 584-1663" : "(267) 647-6400"} to book right away.`;
+});
+
+/* ================= AI intake ================= */
+const INTAKE_SYSTEM = `You turn a patient's plain-language note into a structured pre-visit intake summary for an internal medicine clinician. Respond ONLY with JSON, no markdown:
+{"chiefComplaint": string, "symptoms": string[], "duration": string, "medications": string[], "allergies": string[], "questionsForDoctor": string[], "flags": string[] (anything the clinician should notice, empty if none)}
+Use "Not mentioned" or empty arrays where the note is silent. Never invent details.`;
+
+document.getElementById("intake-go").addEventListener("click", async () => {
+  const note = document.getElementById("intake-note").value.trim();
+  const errEl = document.getElementById("intake-err");
+  const card = document.getElementById("summary-card");
+  const empty = document.getElementById("summary-empty");
+  if (!note) return;
+  const btn = document.getElementById("intake-go");
+  btn.textContent = "Organizing…"; btn.disabled = true; errEl.hidden = true;
+  try {
+    const text = await askClaude([{ role: "user", content: note }], INTAKE_SYSTEM);
+    const s = parseJSON(text);
+    if (!s) { errEl.textContent = "Couldn't structure that note — try adding a bit more detail."; errEl.hidden = false; return; }
+    const list = a => (a && a.length ? a.map(esc).join(" · ") : "Not mentioned");
+    const row = (l, v) => `<div class="srow"><div class="lbl">${l}</div><div class="val">${v}</div></div>`;
+    card.innerHTML =
+      row("Chief complaint", esc(s.chiefComplaint || "Not mentioned")) +
+      row("Symptoms", list(s.symptoms)) +
+      row("Duration", esc(s.duration || "Not mentioned")) +
+      row("Medications", list(s.medications)) +
+      row("Allergies", list(s.allergies)) +
+      row("Your questions", list(s.questionsForDoctor)) +
+      (s.flags && s.flags.length ? `<span class="flag">For your care team: ${s.flags.map(esc).join("; ")}</span>` : "");
+    empty.hidden = true; card.hidden = false;
+  } catch {
+    errEl.textContent = "Intake is unavailable right now — you can fill forms at the front desk instead.";
+    errEl.hidden = false;
+  } finally {
+    btn.textContent = "Prepare my intake"; btn.disabled = false;
+  }
+});
+
+/* Close mobile menu on link tap */
+document.querySelectorAll("#navlinks a").forEach(a =>
+  a.addEventListener("click", () => document.getElementById("navlinks").classList.remove("open"))
+);
+</script>
+</body>
+</html>
